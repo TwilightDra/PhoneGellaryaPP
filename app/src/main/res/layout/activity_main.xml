@@ -94,11 +94,12 @@
         android:id="@+id/btn_Camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="to_Camera"
+        android:onClick="to_CreateTest"
         android:text="Camera"
         tools:layout_editor_absoluteY="5dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_PhotoM"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        />
 
     <Button
         android:id="@+id/btn_button3"

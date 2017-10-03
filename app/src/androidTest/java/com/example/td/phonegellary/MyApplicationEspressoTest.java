@@ -24,16 +24,19 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MyApplicationEspressoTest {
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<Search> mActivityRule =
+            new ActivityTestRule<>(Search.class);
     /*@Test
     public void ensureTextChangesWork() {
         // Type text and then press the button.
-        onView(withId(R.id.edit_message))
-                .perform(typeText("HELLO"), closeSoftKeyboard());
+        onView(withId(R.id.edit_message)).perform(typeText("HELLO"), closeSoftKeyboard());
         onView(withId(R.id.send_message)).perform(click());
         // Check that the text was changed.
         onView(withId(R.id.test_message)).check(matches(withText("HELLO")));
         //onView(withContentDescription("Navigate up")).perform(click());
     }*/
+    public void ensureImageChangesWork(){
+        onView(withId(R.id.btn_time)).perform(click());
+        //onView()
+    }
 }

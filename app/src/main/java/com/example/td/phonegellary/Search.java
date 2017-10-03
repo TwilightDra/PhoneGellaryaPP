@@ -1,9 +1,14 @@
 package com.example.td.phonegellary;
 
 import android.content.Intent;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.util.Calendar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +24,7 @@ public class Search extends AppCompatActivity {
     TextView dateDisplay;
     final int DATE_DIALOG = 1;
     private ImageView image1;
+    private  String picPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,9 @@ public class Search extends AppCompatActivity {
 
         btn = (Button) findViewById(R.id.btn_time);
         dateDisplay = (TextView) findViewById(R.id.dateDisplay);
+
+
+
 
         image1=(ImageView) findViewById(R.id.imageView1);
         btn.setOnClickListener(new OnClickListener() {
@@ -51,12 +60,22 @@ public class Search extends AppCompatActivity {
     }
     public void display() {
         dateDisplay.setText(new StringBuffer().append(mMonth + 1).append("-").append(mDay).append("-").append(mYear).append(" "));
+        BitmapFactory.Options options=new BitmapFactory.Options();
+        options.inSampleSize=2;
+
         if(mDay==1){
-            image1.setImageResource(R.drawable.a1);
-        }else if(mDay==2)
-            image1.setImageResource(R.drawable.a2);
-        else if(mDay==3)
-            image1.setImageResource(R.drawable.a3);
+            picPath="/mnt/user/0/primary/a1.jpg";
+            Bitmap bm = BitmapFactory.decodeFile(picPath, options);
+            image1.setImageBitmap(bm);
+        }else if(mDay==2){
+            picPath="/sdcard/a2.jpg";
+            Bitmap bm = BitmapFactory.decodeFile(picPath, options);
+            image1.setImageBitmap(bm);
+        }else if(mDay==3){
+            picPath="/sdcard/a3.jpg";
+            Bitmap bm = BitmapFactory.decodeFile(picPath, options);
+            image1.setImageBitmap(bm);
+        }
     }
 
     private DatePickerDialog.OnDateSetListener mdateListener = new DatePickerDialog.OnDateSetListener() {

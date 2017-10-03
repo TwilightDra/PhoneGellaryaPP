@@ -16,4 +16,5 @@ public class PhotoManage extends AppCompatActivity {
         Intent intent1= new Intent(PhotoManage.this, Search.class);
         startActivity(intent1);
     }
+
 }
