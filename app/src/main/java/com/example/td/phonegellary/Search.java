@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Search extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class Search extends AppCompatActivity {
     Button btn;
     TextView dateDisplay;
     final int DATE_DIALOG = 1;
+    private ImageView image1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class Search extends AppCompatActivity {
         btn = (Button) findViewById(R.id.btn_time);
         dateDisplay = (TextView) findViewById(R.id.dateDisplay);
 
+        image1=(ImageView) findViewById(R.id.imageView1);
         btn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -48,6 +51,12 @@ public class Search extends AppCompatActivity {
     }
     public void display() {
         dateDisplay.setText(new StringBuffer().append(mMonth + 1).append("-").append(mDay).append("-").append(mYear).append(" "));
+        if(mDay==1){
+            image1.setImageResource(R.drawable.a1);
+        }else if(mDay==2)
+            image1.setImageResource(R.drawable.a2);
+        else if(mDay==3)
+            image1.setImageResource(R.drawable.a3);
     }
 
     private DatePickerDialog.OnDateSetListener mdateListener = new DatePickerDialog.OnDateSetListener() {
@@ -65,8 +74,8 @@ public class Search extends AppCompatActivity {
         Intent intent1= new Intent(Search.this, SelectLocation.class);
         startActivity(intent1);
     }
-    public void to_SelectT(View view){
+    /*public void to_SelectT(View view){
         Intent intent1= new Intent(Search.this, TestActivity.class);
         startActivity(intent1);
-    }
+    }*/
 }

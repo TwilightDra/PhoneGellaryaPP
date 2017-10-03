@@ -7,42 +7,99 @@
     tools:context="com.example.td.phonegellary.Search">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView1"
         android:layout_width="105dp"
         android:layout_height="105dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        app:layout_constraintLeft_toRightOf="@+id/imageView6"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/dateDisplay" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateDisplay"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="105dp"
         android:layout_height="105dp"
         app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageView1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/dateDisplay" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/dateDisplay"
+        app:srcCompat="@drawable/a1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toRightOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toRightOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/a2" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginLeft="12dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-    <EditText
-        android:id="@+id/dateDisplay"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="4dp"
-        android:inputType="textPersonName"
-        app:layout_constraintLeft_toRightOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-<!--    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="277dp"
-        android:layout_height="31dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />-->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintLeft_toRightOf="@+id/imageView7"
+        android:layout_marginLeft="12dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/a3"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintLeft_toRightOf="@+id/imageView8"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -56,80 +113,25 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="13dp" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintLeft_toRightOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:srcCompat="@drawable/a3" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        app:layout_constraintLeft_toRightOf="@+id/imageView11"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        app:layout_constraintLeft_toRightOf="@+id/imageView9"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateDisplay"
-        app:srcCompat="@drawable/a1" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintLeft_toRightOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/a2" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        app:layout_constraintLeft_toRightOf="@+id/imageView8"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/dateDisplay" />
+    <EditText
+        android:id="@+id/dateDisplay"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toRightOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="277dp"
+            android:layout_height="31dp"
+            app:layout_constraintLeft_toRightOf="@+id/textView"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" />-->
 
     <Button
         android:id="@+id/btn_time"
