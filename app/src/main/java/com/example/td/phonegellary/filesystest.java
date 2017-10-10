@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -27,7 +28,11 @@ public class filesystest extends AppCompatActivity {
     private int WRITE_STORAGE_PERMISSION_CODE = 24;
     final int TAKE_PICTURE=1;
     private  Button btnTakePic=null;
-    private ImageView imageView=null;
+    private ImageView iv=null;
+    String imageFilePath;
+    File imageFile;
+    Uri imageFileUri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,10 @@ public class filesystest extends AppCompatActivity {
         setContentView(R.layout.activity_filesystest);
         btnTakePic=(Button) findViewById(R.id.btn_TakePic);
         btnTakePic.setOnClickListener(onClickListener);
-        imageView=(ImageView) findViewById(R.id.imageView16);
+        iv=(ImageView) findViewById(R.id.imageViewTest);
+        imageFilePath=Environment.getExternalStorageDirectory().getAbsolutePath()+"/picture.jpg";
+        imageFile=new File(imageFilePath);
+        imageFileUri = Uri.fromFile(imageFile);
 
 
         String dbName = "tempDB.db";
@@ -109,20 +117,26 @@ public class filesystest extends AppCompatActivity {
         public void onClick(View v){
             Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             ContentValues contentValues=new ContentValues(1);
-            contentValues.put(MediaStore.Images.Media.DATA, "temp.jpg");
-            Uri fileUri=getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-            //startActivityForResult(intent, TAKE_PICTURE);
-            startActivity(intent);
+            contentValues.put(MediaStore.Images.Media.DATA, imageFilePath);
+            imageFileUri=getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageFileUri);
+            if(intent.resolveActivity(getPackageManager())!=null){
+                startActivityForResult(intent, TAKE_PICTURE);
+            }
+            //startActivity(intent);
         }
     };
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
         if(requestCode==TAKE_PICTURE){
             if(resultCode==RESULT_OK){
-                Bundle bundle=data.getExtras();
-                Bitmap photo=(Bitmap)bundle.get("data");
-                imageView.setImageBitmap(photo);
+                BitmapFactory.Options bmpFO=new BitmapFactory.Options();
+                bmpFO.inJustDecodeBounds=false;
+                //Bundle bundle=data.getExtras();
+                //Bitmap photo=(Bitmap)bundle.get("data");
+                Bitmap photo=BitmapFactory.decodeFile(imageFilePath, bmpFO);
+                iv.setImageBitmap(photo);
             }
 
         }
