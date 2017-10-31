@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
             db.execSQL("CREATE TABLE IF NOT EXISTS "
                     + "ImageData"
-                    + " (ID integer PRIMARY KEY, Image BINARY, TagDate varchar(10));");
+                    + " (ID integer PRIMARY KEY, Image BINARY, TagDate varchar(10), TagKeyword varchar(20));");
 
             db.execSQL("INSERT INTO ImageData (ID , Image, TagDate) VALUES (0,'DummyTest123456789','2017-09-26');");
             //db.execSQL("DROP TABLE PhoneBook;");
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         if(dbCursor.getCount()!=0){
             dbCursor.moveToLast();
             IdCheck=dbCursor.getInt(idCol);
-                Toast.makeText(this, "IDcheck:"+IdCheck, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "IDcheck:"+IdCheck, Toast.LENGTH_SHORT).show();
         }else{
             IdCheck=0;
         }
@@ -122,14 +122,17 @@ public class MainActivity extends AppCompatActivity {
 
                     Object[] args=new Object[]{bst.toByteArray()};
                     //Toast.makeText(this, bst.toByteArray().toString(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, IdCheck+1+"|"+date+"|", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, IdCheck+1+"|"+date+"|", Toast.LENGTH_SHORT).show();
 
-                    db.execSQL("INSERT INTO ImageData(Image) values(?)", args);
-                    db.execSQL("UPDATE ImageData SET TagDate = '"+date+"' WHERE ID = "+IdCheck+1+";");
+                    db.execSQL("INSERT INTO ImageData(Image) values(?);", args);
+                    int newId=IdCheck+1;
+                    String dbexec="UPDATE ImageData SET TagDate = '"+date+"',TagKeyword ='Key' WHERE ID = "+newId+";";
+                    db.execSQL(dbexec);
                     //Toast.makeText(this, bst.toString(), Toast.LENGTH_SHORT).show();
 
                     bst.close();
                     //db.close();
+                    checkTB();
                 }
                 catch (Exception e){
                     e.printStackTrace();

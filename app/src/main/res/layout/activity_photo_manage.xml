@@ -5,36 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.td.phonegellary.PhotoManage">
+
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageView1"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textConditionDisp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        app:layout_constraintLeft_toRightOf="@+id/imageView1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textConditionDisp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textConditionDisp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:scaleType="fitXY"
         app:srcCompat="@android:drawable/sym_def_app_icon"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintLeft_toRightOf="@+id/imageView12"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:layout_editor_absoluteX="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-    <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/imageView5"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:scaleType="fitXY"
         app:srcCompat="@android:drawable/sym_def_app_icon"
+        app:layout_constraintLeft_toRightOf="@+id/imageView4"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintLeft_toRightOf="@+id/imageView11"
-        android:layout_marginLeft="15dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        app:layout_constraintLeft_toRightOf="@+id/imageView5"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -44,15 +80,17 @@
         app:srcCompat="@android:drawable/sym_def_app_icon"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintLeft_toRightOf="@+id/imageView9"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="105dp"
         android:layout_height="105dp"
+        android:scaleType="fitXY"
         app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:layout_editor_absoluteX="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageView7"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -62,90 +100,150 @@
         android:layout_height="105dp"
         android:scaleType="fitXY"
         app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:layout_constraintLeft_toRightOf="@+id/imageView8"
-        android:layout_marginLeft="15dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintLeft_toRightOf="@+id/imageView5"
-        android:layout_marginLeft="15dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/btn_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        tools:layout_editor_absoluteY="5dp"
-        app:layout_constraintLeft_toRightOf="@+id/editText"
-        android:layout_marginLeft="8dp"
-        android:onClick="to_Search"/>
+        android:onClick="searchPic"
+        app:layout_constraintLeft_toRightOf="@+id/textConditionDisp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        app:layout_constraintLeft_toRightOf="@+id/imageView6"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:layout_editor_absoluteX="134dp"
-        android:layout_marginTop="-121dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/textConditionDisp"
         android:layout_width="258dp"
         android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="5dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add to"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="41dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:layout_marginLeft="256dp"
+        android:text="Time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn_addTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Tag"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="41dp"
-        app:layout_constraintLeft_toRightOf="@+id/spinner2"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginBottom="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/editText3"
+        android:layout_marginLeft="8dp"
+        android:onClick="setTag"/>
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
-        app:layout_constraintLeft_toRightOf="@+id/button2"
-        android:layout_marginLeft="5dp"
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="217dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="41dp" />
+        android:layout_marginLeft="12dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="89dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox4"
+        android:layout_marginLeft="81dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox5"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4"
+        android:layout_marginLeft="89dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox7"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+
+    <CheckBox
+        android:id="@+id/checkBox9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox6"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox8"
+        android:layout_marginLeft="81dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -221,4 +221,8 @@ public class filesystest extends Activity {
     public void dbclean(View view){
         db.execSQL("DROP TABLE ImageData;");
     }
+    public void to_Request(View view){
+        Intent intent1= new Intent(filesystest.this, cameraTest.class);
+        startActivity(intent1);
+    }
 }

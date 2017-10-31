@@ -35,8 +35,6 @@ public class Search extends AppCompatActivity {
         dateDisplay = (TextView) findViewById(R.id.dateDisplay);
 
 
-
-
         image1=(ImageView) findViewById(R.id.imageView1);
         btn.setOnClickListener(new OnClickListener() {
 
