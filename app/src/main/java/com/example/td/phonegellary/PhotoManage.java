@@ -79,7 +79,7 @@ public class PhotoManage extends AppCompatActivity {
         mMonth = ca.get(Calendar.MONTH);
         mDay = ca.get(Calendar.DAY_OF_MONTH);
 
-
+        imageClean();
         openDB();
 
     }
@@ -103,8 +103,11 @@ public class PhotoManage extends AppCompatActivity {
         }
     };
     public void display() {
-        text_conditionDisp.setText(new StringBuffer().append(mYear).append("-").append(mMonth+1).append("-").append(mDay));
-
+        if(mDay<10) {
+            text_conditionDisp.setText(new StringBuffer().append(mYear).append("-").append(mMonth+1).append("-0").append(mDay));
+        }else{
+            text_conditionDisp.setText(new StringBuffer().append(mYear).append("-").append(mMonth+1).append("-").append(mDay));
+        }
     }
     /*public void to_Search(View view){
         Intent intent1= new Intent(PhotoManage.this, Search.class);
@@ -123,6 +126,7 @@ public class PhotoManage extends AppCompatActivity {
 
     public void searchPic(View view){
         imageClean();
+        //Toast.makeText(this,"day"+mDay, Toast.LENGTH_SHORT).show();
         try{
             Cursor dbCursor = db.query( "ImageData", null, null, null, null, null, null);
             int idCol = dbCursor.getColumnIndex("ID");

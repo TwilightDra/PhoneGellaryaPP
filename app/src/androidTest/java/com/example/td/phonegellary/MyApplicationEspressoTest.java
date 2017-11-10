@@ -28,8 +28,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MyApplicationEspressoTest {
     @Rule
-    public ActivityTestRule<Search> mActivityRule =
-            new ActivityTestRule<>(Search.class);
+    public ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<>(MainActivity.class);
     /*@Test
     public void ensureTextChangesWork() {
         // Type text and then press the button.
@@ -45,7 +45,9 @@ public class MyApplicationEspressoTest {
         Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
         //onView()
     }*/
+    @Test
     public void ensureCheckWord(){
+
         onView(withId(R.id.btn_PhotoM)).perform(click());
         onView(withId(R.id.textConditionDisp)).perform(typeText("2017-10-31"), closeSoftKeyboard());
         onView(withId(R.id.btn_search)).perform(click());
